@@ -157,6 +157,7 @@ type PartMessage struct {
 	MsgID     string  `json:"msgId"`
 	Text      string  `json:"text"`
 	Timestamp int     `json:"timestamp"`
+	Parts     []Part  `json:"parts"`
 }
 
 type PartPayload struct {
