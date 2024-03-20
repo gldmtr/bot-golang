@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson4086215fDecodeGithubComMailRuImBotGolang(in *jlexer.Lexer, out *Message) {
+func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Message) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -62,7 +62,7 @@ func easyjson4086215fDecodeGithubComMailRuImBotGolang(in *jlexer.Lexer, out *Mes
 				if out.InlineKeyboard == nil {
 					out.InlineKeyboard = new(Keyboard)
 				}
-				easyjson4086215fDecodeGithubComMailRuImBotGolang1(in, out.InlineKeyboard)
+				easyjson4086215fDecodeGithubComGldmtrBotGolang1(in, out.InlineKeyboard)
 			}
 		case "parseMode":
 			out.ParseMode = ParseMode(in.String())
@@ -80,7 +80,7 @@ func easyjson4086215fDecodeGithubComMailRuImBotGolang(in *jlexer.Lexer, out *Mes
 		in.Consumed()
 	}
 }
-func easyjson4086215fEncodeGithubComMailRuImBotGolang(out *jwriter.Writer, in Message) {
+func easyjson4086215fEncodeGithubComGldmtrBotGolang(out *jwriter.Writer, in Message) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -135,7 +135,7 @@ func easyjson4086215fEncodeGithubComMailRuImBotGolang(out *jwriter.Writer, in Me
 		if in.InlineKeyboard == nil {
 			out.RawString("null")
 		} else {
-			easyjson4086215fEncodeGithubComMailRuImBotGolang1(out, *in.InlineKeyboard)
+			easyjson4086215fEncodeGithubComGldmtrBotGolang1(out, *in.InlineKeyboard)
 		}
 	}
 	{
@@ -159,27 +159,27 @@ func easyjson4086215fEncodeGithubComMailRuImBotGolang(out *jwriter.Writer, in Me
 // MarshalJSON supports json.Marshaler interface
 func (v Message) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson4086215fEncodeGithubComMailRuImBotGolang(&w, v)
+	easyjson4086215fEncodeGithubComGldmtrBotGolang(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Message) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson4086215fEncodeGithubComMailRuImBotGolang(w, v)
+	easyjson4086215fEncodeGithubComGldmtrBotGolang(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Message) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson4086215fDecodeGithubComMailRuImBotGolang(&r, v)
+	easyjson4086215fDecodeGithubComGldmtrBotGolang(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Message) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson4086215fDecodeGithubComMailRuImBotGolang(l, v)
+	easyjson4086215fDecodeGithubComGldmtrBotGolang(l, v)
 }
-func easyjson4086215fDecodeGithubComMailRuImBotGolang1(in *jlexer.Lexer, out *Keyboard) {
+func easyjson4086215fDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Keyboard) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -252,7 +252,7 @@ func easyjson4086215fDecodeGithubComMailRuImBotGolang1(in *jlexer.Lexer, out *Ke
 		in.Consumed()
 	}
 }
-func easyjson4086215fEncodeGithubComMailRuImBotGolang1(out *jwriter.Writer, in Keyboard) {
+func easyjson4086215fEncodeGithubComGldmtrBotGolang1(out *jwriter.Writer, in Keyboard) {
 	out.RawByte('{')
 	first := true
 	_ = first
