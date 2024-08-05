@@ -262,6 +262,7 @@ func NewBot(token string, opts ...BotOption) (*Bot, error) {
 	apiURL := defaultAPIURL
 	debug := defaultDebug
 	client := *http.DefaultClient
+	lastEventID := 0
 	for _, option := range opts {
 		switch option.Type() {
 		case "api_url":
@@ -270,6 +271,8 @@ func NewBot(token string, opts ...BotOption) (*Bot, error) {
 			debug = option.Value().(bool)
 		case "http_client":
 			client = option.Value().(http.Client)
+		case "last_event_id":
+			lastEventID = option.Value().(int)
 		}
 	}
 
@@ -279,6 +282,7 @@ func NewBot(token string, opts ...BotOption) (*Bot, error) {
 
 	tgClient := NewCustomClient(&client, apiURL, token, logger)
 	updater := NewUpdater(tgClient, 0, logger)
+	updater.lastEventID = lastEventID
 
 	info, err := tgClient.GetInfo()
 	if err != nil {
