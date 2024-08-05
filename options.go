@@ -36,3 +36,13 @@ func (o BotHTTPClient) Type() string {
 func (o BotHTTPClient) Value() interface{} {
 	return http.Client(o)
 }
+
+type BotLastEventID int
+
+func (o BotLastEventID) Type() string {
+	return "last_event_id"
+}
+
+func (o BotLastEventID) Value() interface{} {
+	return int(o)
+}
