@@ -46,3 +46,13 @@ func (o BotLastEventID) Type() string {
 func (o BotLastEventID) Value() interface{} {
 	return int(o)
 }
+
+type BotPollTime int
+
+func (o BotPollTime) Type() string {
+	return "poll_time"
+}
+
+func (o BotPollTime) Value() interface{} {
+	return int(o)
+}
