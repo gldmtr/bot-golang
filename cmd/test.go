@@ -19,7 +19,7 @@ func main() {
 	}
 
 	response := eventsResponse{}
-	err := json.Unmarshal(data, &response)
+	err = json.Unmarshal(data, &response)
 	if err != nil {
 		panic(err)
 	}

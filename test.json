@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "eventId": 356,
+      "payload": {
+        "chat": {
+          "chatId": "dm.glazkov@vk.team",
+          "type": "private"
+        },
+        "from": {
+          "firstName": "Дмитрий",
+          "lastName": "Глазков",
+          "userId": "dm.glazkov@vk.team"
+        },
+        "msgId": "7348407680148439857",
+        "parts": [
+          {
+            "payload": {
+              "message": {
+                "from": {
+                  "firstName": "Дмитрий",
+                  "lastName": "Глазков",
+                  "userId": "dm.glazkov@vk.team"
+                },
+                "msgId": "7348406997248639785",
+                "parts": [
+                  {
+                    "payload": {
+                      "fileId": "8uYgw000hkqA9Xui9KXf1R65f9884f1af",
+                      "type": "video"
+                    },
+                    "type": "file"
+                  }
+                ],
+                "text": "https://files-n.internal.myteam.mail.ru/get/8uYgw000hkqA9Xui9KXf1R65f9884f1af",
+                "timestamp": 1710934332
+              }
+            },
+            "type": "forward"
+          }
+        ],
+        "timestamp": 1710934490
+      },
+      "type": "newMessage"
+    }
+  ],
+  "ok": true
+}

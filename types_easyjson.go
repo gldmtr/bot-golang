@@ -28,7 +28,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *event
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -145,7 +145,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *User
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -243,7 +243,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang2(in *jlexer.Lexer, out *User
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -309,7 +309,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang3(in *jlexer.Lexer, out *Resp
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -382,7 +382,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang4(in *jlexer.Lexer, out *Phot
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -448,7 +448,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang5(in *jlexer.Lexer, out *Part
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -556,7 +556,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang6(in *jlexer.Lexer, out *Part
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -580,7 +580,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang6(in *jlexer.Lexer, out *Part
 				in.Delim('[')
 				if out.Parts == nil {
 					if !in.IsDelim(']') {
-						out.Parts = make([]Part, 0, 1)
+						out.Parts = make([]Part, 0, 0)
 					} else {
 						out.Parts = []Part{}
 					}
@@ -682,7 +682,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang7(in *jlexer.Lexer, out *Part
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -755,7 +755,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang8(in *jlexer.Lexer, out *Memb
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -853,7 +853,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang9(in *jlexer.Lexer, out *Even
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -869,7 +869,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang9(in *jlexer.Lexer, out *Even
 				in.Delim('[')
 				if out.Parts == nil {
 					if !in.IsDelim(']') {
-						out.Parts = make([]Part, 0, 1)
+						out.Parts = make([]Part, 0, 0)
 					} else {
 						out.Parts = []Part{}
 					}
@@ -1099,7 +1099,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang10(in *jlexer.Lexer, out *Eve
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -1179,7 +1179,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang11(in *jlexer.Lexer, out *Con
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -1259,7 +1259,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang12(in *jlexer.Lexer, out *Cha
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -1339,7 +1339,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang13(in *jlexer.Lexer, out *Bot
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -1465,7 +1465,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang14(in *jlexer.Lexer, out *Bas
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -1559,7 +1559,7 @@ func easyjson6601e8cdDecodeGithubComGldmtrBotGolang15(in *jlexer.Lexer, out *Adm
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

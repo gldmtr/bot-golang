@@ -1,6 +1,6 @@
 module github.com/gldmtr/bot-golang
 
-go 1.20
+go 1.21
 
 require (
 	github.com/hako/durafmt v0.0.0-20210608085754-5c1018a4e16b

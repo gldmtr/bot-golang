@@ -28,7 +28,7 @@ func easyjson8ceb9162DecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *File)
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

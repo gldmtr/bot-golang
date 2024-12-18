@@ -28,7 +28,7 @@ func easyjsonF248ab8DecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Button
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -122,7 +122,7 @@ func easyjsonF248ab8DecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Butto
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()

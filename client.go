@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 )
@@ -361,8 +362,13 @@ func (c *Client) SendTextMessage(message *Message) error {
 	}
 
 	if message.ForwardMsgID != "" {
-		params.Set("forwardMsgId", message.ForwardMsgID)
 		params.Set("forwardChatId", message.ForwardChatID)
+
+		messageIDs := strings.Split(message.ForwardMsgID, ",")
+
+		for _, msgID := range messageIDs {
+			params.Add("forwardMsgId", msgID)
+		}
 	}
 
 	if message.InlineKeyboard != nil {
@@ -402,8 +408,13 @@ func (c *Client) SendTextWithDeeplinkMessage(message *Message) error {
 	}
 
 	if message.ForwardMsgID != "" {
-		params.Set("forwardMsgId", message.ForwardMsgID)
 		params.Set("forwardChatId", message.ForwardChatID)
+
+		messageIDs := strings.Split(message.ForwardMsgID, ",")
+
+		for _, msgID := range messageIDs {
+			params.Add("forwardMsgId", msgID)
+		}
 	}
 
 	if message.InlineKeyboard != nil {
@@ -493,8 +504,13 @@ func (c *Client) SendFileMessage(message *Message) error {
 	}
 
 	if message.ForwardMsgID != "" {
-		params.Set("forwardMsgId", message.ForwardMsgID)
 		params.Set("forwardChatId", message.ForwardChatID)
+
+		messageIDs := strings.Split(message.ForwardMsgID, ",")
+
+		for _, msgID := range messageIDs {
+			params.Add("forwardMsgId", msgID)
+		}
 	}
 
 	if message.InlineKeyboard != nil {
@@ -534,8 +550,13 @@ func (c *Client) SendVoiceMessage(message *Message) error {
 	}
 
 	if message.ForwardMsgID != "" {
-		params.Set("forwardMsgId", message.ForwardMsgID)
 		params.Set("forwardChatId", message.ForwardChatID)
+
+		messageIDs := strings.Split(message.ForwardMsgID, ",")
+
+		for _, msgID := range messageIDs {
+			params.Add("forwardMsgId", msgID)
+		}
 	}
 
 	if message.InlineKeyboard != nil {

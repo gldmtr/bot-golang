@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Message) {
+func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *MessageFile) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -28,7 +28,66 @@ func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Messa
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson4086215fEncodeGithubComGldmtrBotGolang(out *jwriter.Writer, in MessageFile) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v MessageFile) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson4086215fEncodeGithubComGldmtrBotGolang(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v MessageFile) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson4086215fEncodeGithubComGldmtrBotGolang(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *MessageFile) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson4086215fDecodeGithubComGldmtrBotGolang(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *MessageFile) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson4086215fDecodeGithubComGldmtrBotGolang(l, v)
+}
+func easyjson4086215fDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Message) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -62,7 +121,7 @@ func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Messa
 				if out.InlineKeyboard == nil {
 					out.InlineKeyboard = new(Keyboard)
 				}
-				easyjson4086215fDecodeGithubComGldmtrBotGolang1(in, out.InlineKeyboard)
+				easyjson4086215fDecodeGithubComGldmtrBotGolang2(in, out.InlineKeyboard)
 			}
 		case "parseMode":
 			out.ParseMode = ParseMode(in.String())
@@ -80,7 +139,7 @@ func easyjson4086215fDecodeGithubComGldmtrBotGolang(in *jlexer.Lexer, out *Messa
 		in.Consumed()
 	}
 }
-func easyjson4086215fEncodeGithubComGldmtrBotGolang(out *jwriter.Writer, in Message) {
+func easyjson4086215fEncodeGithubComGldmtrBotGolang1(out *jwriter.Writer, in Message) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -135,7 +194,7 @@ func easyjson4086215fEncodeGithubComGldmtrBotGolang(out *jwriter.Writer, in Mess
 		if in.InlineKeyboard == nil {
 			out.RawString("null")
 		} else {
-			easyjson4086215fEncodeGithubComGldmtrBotGolang1(out, *in.InlineKeyboard)
+			easyjson4086215fEncodeGithubComGldmtrBotGolang2(out, *in.InlineKeyboard)
 		}
 	}
 	{
@@ -159,27 +218,27 @@ func easyjson4086215fEncodeGithubComGldmtrBotGolang(out *jwriter.Writer, in Mess
 // MarshalJSON supports json.Marshaler interface
 func (v Message) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson4086215fEncodeGithubComGldmtrBotGolang(&w, v)
+	easyjson4086215fEncodeGithubComGldmtrBotGolang1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Message) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson4086215fEncodeGithubComGldmtrBotGolang(w, v)
+	easyjson4086215fEncodeGithubComGldmtrBotGolang1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Message) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson4086215fDecodeGithubComGldmtrBotGolang(&r, v)
+	easyjson4086215fDecodeGithubComGldmtrBotGolang1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Message) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson4086215fDecodeGithubComGldmtrBotGolang(l, v)
+	easyjson4086215fDecodeGithubComGldmtrBotGolang1(l, v)
 }
-func easyjson4086215fDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Keyboard) {
+func easyjson4086215fDecodeGithubComGldmtrBotGolang2(in *jlexer.Lexer, out *Keyboard) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -190,7 +249,7 @@ func easyjson4086215fDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Keyb
 	}
 	in.Delim('{')
 	for !in.IsDelim('}') {
-		key := in.UnsafeString()
+		key := in.UnsafeFieldName(false)
 		in.WantColon()
 		if in.IsNull() {
 			in.Skip()
@@ -252,7 +311,7 @@ func easyjson4086215fDecodeGithubComGldmtrBotGolang1(in *jlexer.Lexer, out *Keyb
 		in.Consumed()
 	}
 }
-func easyjson4086215fEncodeGithubComGldmtrBotGolang1(out *jwriter.Writer, in Keyboard) {
+func easyjson4086215fEncodeGithubComGldmtrBotGolang2(out *jwriter.Writer, in Keyboard) {
 	out.RawByte('{')
 	first := true
 	_ = first

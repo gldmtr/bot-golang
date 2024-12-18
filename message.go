@@ -105,6 +105,16 @@ func (m *Message) AttachExistingVoice(fileID string) {
 	m.ContentType = Voice
 }
 
+func (m *Message) AttachForwardedMessage(chatID string, messageID string) {
+	m.ForwardChatID = chatID
+
+	if m.ForwardMsgID == "" {
+		m.ForwardMsgID = messageID
+	} else {
+		m.ForwardMsgID = m.ForwardMsgID + "," + messageID
+	}
+}
+
 // ParseMode represent a type of text formatting
 type ParseMode string
 
